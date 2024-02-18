@@ -3,13 +3,19 @@ import { Rnd } from "react-rnd";
 
 function Notepad({ onClose }) {
   const [width, setWidth] = useState(320);
-  const [height, setHeight] = useState(320); // Set to window's height
+  const [height, setHeight] = useState(320);
   const [x, setX] = useState(0);
   const [y, setY] = useState(0);
+  const [dropdownVisible, setDropdownVisible] = useState(false); // State to control dropdown visibility
 
   // Function to handle close button click
   const handleCloseButtonClick = () => {
-    onClose(); // Call the onClose prop when close button is clicked
+    onClose();
+  };
+
+  // Function to toggle dropdown visibility
+  const toggleDropdown = () => {
+    setDropdownVisible(!dropdownVisible);
   };
 
   return (
@@ -31,13 +37,27 @@ function Notepad({ onClose }) {
       <div className="window_title flex items-center justify-between">
         <button
           className="close_button border-solid border-2 pr-2 pl-2 bg-close_button"
-          onClick={handleCloseButtonClick} // Updated function to handle close button click
+          onClick={handleCloseButtonClick}
         >
           -
         </button>
         <h3 className="flex-grow">Notepad</h3>
       </div>
-      <textarea className="h-[80%] w-[100%]" name="" id="" cols="1" rows="1"></textarea>
+      <div className="border-solid border-2">
+        <button className="mr-2 focus:bg-window_blue" onClick={toggleDropdown}>File</button>
+        {dropdownVisible && (
+          <div id="file_menu" className="absolute bg-close_button flex flex-1 flex-col">
+            <button href="">Save</button> <button href="">Close</button>
+          </div>
+        )}
+      </div>
+      <textarea
+        className="h-[80%] w-[100%]"
+        name=""
+        id=""
+        cols="1"
+        rows="1"
+      ></textarea>
     </Rnd>
   );
 }

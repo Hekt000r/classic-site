@@ -1,5 +1,5 @@
-* This Markdown will documentate every function for future use: (View in GitHub or MD previewer)
-```handleButtonClick() ``` :
+* This Markdown will documentate every important function for future use: (View in GitHub or MD previewer)
+# ```handleButtonClick()```  :
 *   `handleButtonClick` is a function that takes a `programId` as an argument. This `programId` is used to identify which program's visibility state should be toggled.
 *   `setWindowStates` is a state updater function that comes from the `useState` hook. It's used to update the `windowStates` state, which is an object that keeps track of the visibility state of each program.
 *   Inside `setWindowStates`, a function is passed that receives the previous state (`prevStates`). This is a common pattern when the new state depends on the previous state, and it helps to avoid potential issues with stale state in asynchronous operations [2](https://bobbyhadz.com/blog/react-onclick-show-component)[3](https://dev.to/paisndulaksara/how-to-use-the-usestate-hook-to-showhide-content-in-react-2k68).
