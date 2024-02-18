@@ -48,8 +48,9 @@ function App() {
         setY(position.y);
       }}
       className="window"
+      dragHandleClassName="drag-handle"
     >
-      <div className="window_title flex items-center justify-between">
+      <div className="window_title flex items-center justify-between drag-handle">
         <button
           className="close_button border-solid border-2 pr-2 pl-2 bg-close_button"
           onClick={() => handleProgramClose(1)} // Close Program Manager
