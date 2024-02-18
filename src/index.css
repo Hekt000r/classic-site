@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@font-face {
+    font-family: winFont;
+    src: url("./assets//ms-sans-serif-1.ttf");
+}
+.window {
+    @apply border-solid border-[7px] border-x-window_blue border-y-window_blue w-80 ring-2 ring-window_blue  ring-outline_black;
+}
+.window_title {
+    @apply border-solid border-y-2 bg-window_blue text-window_text;
+    font-family: winFont;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+h1, p, h2, h3,h4,h5,h6, textarea {
+    font-family: winFont;
+}
+.flex-grow {
+    flex-grow:   1;
+    text-align: center;
+}
